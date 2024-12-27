@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Bandeja de Entrada{% endblock %}
+{% block content %}
+    <h1>Mensajes</h1>
+    {% for message in messages %}
+        <div>
+            <h2><a href="{% url 'Mensajería:message_detail' message.pk %}">{{ message.subject }}</a></h2>
+            <p>De: {{ message.sender }}</p>
+        </div>
+    {% empty %}
+        <p>No hay mensajes.</p>
+    {% endfor %}
+{% endblock %}

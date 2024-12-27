@@ -16,11 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from Pagina.views import about_view
+from django.contrib.auth import views as auth_views
+from Cuentas.views import SignUpView, ProfileView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('pages.urls')),  
-    path('accounts/', include('accounts.urls')),
-    path('messaging/', include('messaging.urls')),  
-
+    path('', include('Pagina.urls')),  
+    path('Cuentas/', include('Cuentas.urls')),
+    path('Mensajería/', include('Mensajería.urls')),
+    path('about/', about_view, name='about'),  
+    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('signup/', SignUpView.as_view(), name='signup'),
+    path('profile/', ProfileView.as_view(), name='profile'),
 ]

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}{{ message.subject }}{% endblock %}
+{% block content %}
+    <h1>{{ message.subject }}</h1>
+    <p><strong>De:</strong> {{ message.sender }}</p>
+    <p><strong>Para:</strong> {{ message.recipient }}</p>
+    <p><strong>Fecha:</strong> {{ message.timestamp }}</p>
+    <p>{{ message.body }}</p>
+{% endblock %}

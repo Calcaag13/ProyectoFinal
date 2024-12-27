@@ -1,12 +1,13 @@
 from django.urls import path
-from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView
+from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, about_view
 
 app_name = 'Pagina'
 
 urlpatterns = [
-    path('', PostListView.as_view(), name='lista_posteos'),
-    path('<int:pk>/', PostDetailView.as_view(), name='detalle_posteos'),
-    path('new/', PostCreateView.as_view(), name='posteo_forms'),
-    path('<int:pk>/edit/', PostUpdateView.as_view(), name='posteo_forms'),
-    path('<int:pk>/delete/', PostDeleteView.as_view(), name='eliminar_posteo'),
+    path('', PostListView.as_view(), name='post_list'),
+    path('<int:pk>/', PostDetailView.as_view(), name='post_detail'),
+    path('new/', PostCreateView.as_view(), name='post_create'),
+    path('<int:pk>/edit/', PostUpdateView.as_view(), name='post_update'),
+    path('<int:pk>/delete/', PostDeleteView.as_view(), name='post_delete'),
+    path('about/', about_view, name='about'),
 ]

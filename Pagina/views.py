@@ -20,15 +20,20 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
     template_name = 'Pagina/posteo_forms.html'
-    success_url = reverse_lazy('Pagina:lista_posteos')
+    success_url = reverse_lazy('Pagina:post_list')
 
 class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     form_class = PostForm
     template_name = 'Pagina/posteo_forms.html'
-    success_url = reverse_lazy('Pagina:lista_posteos')
+    success_url = reverse_lazy('Pagina:post_list')
 
 class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = 'Pagina/eliminar_posteo.html'
-    success_url = reverse_lazy('Pagina:lista_posteos')
+    success_url = reverse_lazy('Pagina:post_list')
+
+
+def about_view(request):
+    return render(request, 'Pagina/about.html')
+
