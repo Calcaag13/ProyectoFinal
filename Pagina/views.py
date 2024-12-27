@@ -9,26 +9,26 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 class PostListView(ListView):
     model = Post
-    template_name = 'pages/post_list.html'
+    template_name = 'Pagina/lista_posteos.html'
     context_object_name = 'posts'
 
 class PostDetailView(DetailView):
     model = Post
-    template_name = 'pages/post_detail.html'
+    template_name = 'Pagina/detalle_posteos.html'
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
-    template_name = 'pages/post_form.html'
-    success_url = reverse_lazy('pages:post_list')
+    template_name = 'Pagina/posteo_forms.html'
+    success_url = reverse_lazy('Pagina:lista_posteos')
 
 class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     form_class = PostForm
-    template_name = 'pages/post_form.html'
-    success_url = reverse_lazy('pages:post_list')
+    template_name = 'Pagina/posteo_forms.html'
+    success_url = reverse_lazy('Pagina:lista_posteos')
 
 class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
-    template_name = 'pages/post_confirm_delete.html'
-    success_url = reverse_lazy('pages:post_list')
+    template_name = 'Pagina/eliminar_posteo.html'
+    success_url = reverse_lazy('Pagina:lista_posteos')

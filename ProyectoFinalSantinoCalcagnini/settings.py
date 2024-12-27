@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Pagina',
     'Cuentas',
     'Mensajería',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

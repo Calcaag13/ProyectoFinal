@@ -1,6 +1,5 @@
 from django.db import models
 from ckeditor.fields import RichTextField
-# Create your models here.
 
 class Post(models.Model):
     titulo = models.CharField(max_length=200)
@@ -12,3 +11,5 @@ class Post(models.Model):
     def __str__(self):
         return self.titulo
 
+
+# Create your models here.

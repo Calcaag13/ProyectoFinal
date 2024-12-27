@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class MireappConfig(AppConfig):
+class PaginaConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'MiReApp'
+    name = 'Pagina'
