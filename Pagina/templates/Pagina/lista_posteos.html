@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Posts</h1>
+    {% for post in posts %}
+        <div>
+            <h2><a href="{% url 'pages:post_detail' post.pk %}">{{ post.titulo }}</a></h2>
+            <p>{{ post.subtitulo }}</p>
+        </div>
+    {% empty %}
+        <p>No hay páginas aún.</p>
+    {% endfor %}
+{% endblock %}
